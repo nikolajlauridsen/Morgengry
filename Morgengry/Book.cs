@@ -26,7 +26,7 @@ namespace Morgengry {
         }
 
         public override string ToString() {
-            return "A book";
+            return String.Format("ItemId: {0}, Title: {1}, Price: {2}", ItemID, Title, Price);
         }
     }
 }
