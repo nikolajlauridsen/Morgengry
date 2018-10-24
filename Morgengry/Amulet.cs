@@ -25,5 +25,9 @@ namespace Morgengry {
             Quality = quality;
             Design = design;
         }
+
+        public override string ToString() {
+            return "Amulet";
+        }
     }
 }
