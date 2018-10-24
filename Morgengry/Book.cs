@@ -5,21 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Morgengry {
-    class Book {
+    public class Book {
         public string ItemID;
         public string Title;
         public double Price;
 
-        Book(string itemId) {
+        public Book(string itemId) {
             ItemID = itemId;
         }
 
-        Book(string itemId, string title) {
+        public Book(string itemId, string title) {
             ItemID = itemId;
             Title = title;
         }
 
-        Book(string itemId, string title, double price) {
+        public Book(string itemId, string title, double price) {
             ItemID = itemId;
             Title = title;
             Price = price;

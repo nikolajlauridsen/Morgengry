@@ -5,22 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Morgengry {
-    class Amulet {
+    public enum Level { low, medium, high }
+
+    public class Amulet {
         public string ItemId;
         public string Design;
-        public enum Level { low, medium, high}
+        
         public Level Quality;
 
-        Amulet(String itemId) {
+        public Amulet(String itemId) {
             ItemId = itemId;
         }
 
-        Amulet(String itemId, Level quality) {
+        public Amulet(String itemId, Level quality) {
             ItemId = itemId;
             Quality = quality;
         }
 
-        Amulet(String itemId, Level quality, String design) {
+        public Amulet(String itemId, Level quality, String design) {
             ItemId = itemId;
             Quality = quality;
             Design = design;

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morgengry", "Morgengry\Morgengry.csproj", "{2698DFA3-C727-4C82-8E32-F1D193CAD5AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4CE89078-59A5-4D0F-B3C0-D2CE85440912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2698DFA3-C727-4C82-8E32-F1D193CAD5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2698DFA3-C727-4C82-8E32-F1D193CAD5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2698DFA3-C727-4C82-8E32-F1D193CAD5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE89078-59A5-4D0F-B3C0-D2CE85440912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE89078-59A5-4D0F-B3C0-D2CE85440912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE89078-59A5-4D0F-B3C0-D2CE85440912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE89078-59A5-4D0F-B3C0-D2CE85440912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
