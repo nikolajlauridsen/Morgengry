@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Morgengry {
-    public enum Level { low, medium, high }
+    public enum Level { medium, low, high }
 
     public class Amulet {
         public string ItemId;
-        public string Design;
-        
+        public string Design; 
         public Level Quality;
 
         public Amulet(String itemId) {
@@ -29,7 +28,7 @@ namespace Morgengry {
         }
 
         public override string ToString() {
-            return "Amulet";
+            return String.Format("ItemId: {0}, Quality: {1}, Design: {2}", ItemId, Quality, Design);
         }
     }
 }
