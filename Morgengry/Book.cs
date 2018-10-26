@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Morgengry {
-    public class Book {
-        public string ItemID;
+    public class Book : Merchandise {
         public string Title;
         public double Price;
 
         public Book(string itemId, string title, double price) {
-            ItemID = itemId;
+            ItemId = itemId;
             Title = title;
             Price = price;
         }
@@ -23,7 +22,7 @@ namespace Morgengry {
         }
 
         public override string ToString() {
-            return String.Format("ItemId: {0}, Title: {1}, Price: {2}", ItemID, Title, Price);
+            return String.Format("ItemId: {0}, Title: {1}, Price: {2}", ItemId, Title, Price);
         }
     }
 }

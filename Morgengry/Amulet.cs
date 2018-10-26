@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Morgengry {
-    public enum Level { medium, low, high }
+    public enum Level { low, medium, high }
 
-    public class Amulet {
-        public string ItemId;
+    public class Amulet : Merchandise {
         public string Design; 
         public Level Quality;
 
-        public Amulet(String itemId, Level quality, String design) {
+        public Amulet(string itemId, Level quality, string design) {
             ItemId = itemId;
             Quality = quality;
             Design = design;
