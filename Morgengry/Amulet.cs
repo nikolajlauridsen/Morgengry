@@ -11,8 +11,7 @@ namespace Morgengry {
         public string Design; 
         public Level Quality;
 
-        public Amulet(string itemId, Level quality, string design) {
-            ItemId = itemId;
+        public Amulet(string itemId, Level quality, string design) : base(itemId) {
             Quality = quality;
             Design = design;
         }

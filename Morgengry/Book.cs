@@ -9,8 +9,7 @@ namespace Morgengry {
         public string Title;
         public double Price;
 
-        public Book(string itemId, string title, double price) {
-            ItemId = itemId;
+        public Book(string itemId, string title, double price) : base(itemId) {
             Title = title;
             Price = price;
         }

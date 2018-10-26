@@ -9,6 +9,10 @@ namespace Morgengry {
     public abstract class Merchandise {
         public string ItemId;
 
+        public Merchandise(string itemId) {
+            ItemId = itemId;
+        }
+
         public override string ToString() {
             return "ItemId: " + ItemId;
         }
