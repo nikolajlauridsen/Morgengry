@@ -14,8 +14,6 @@ namespace Test {
         BookRepository books = new BookRepository();
         AmuletRepository amulets = new AmuletRepository();
 
-
-
         [TestInitialize]
         public void Init() {
             b1 = new Book("1");
@@ -25,7 +23,6 @@ namespace Test {
             books.AddBook(b2);
             books.AddBook(b3);
 
-
             a11 = new Amulet("11");
             a12 = new Amulet("12", Level.high);
             a13 = new Amulet("13", Level.low, "Capricorn");
@@ -33,12 +30,10 @@ namespace Test {
             amulets.AddAmulet(a12);
             amulets.AddAmulet(a13);
 
-
             c111 = new Course("Eufori med røg");
             c112 = new Course("Nuru Massage using Chia Oil", 157);
             courses.AddCourse(c111);
             courses.AddCourse(c112);
-
         }
 
         [TestMethod]
@@ -63,6 +58,6 @@ namespace Test {
             Assert.AreEqual(2625.00, Utility.GetValueOfCourse(c112));
             Assert.AreEqual(2625.00, courses.GetTotalValue());
         }
-    }
 
+    }
 }

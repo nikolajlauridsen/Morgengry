@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace Morgengry {
     public class CourseRepository {
-        private List<Course> courses;
+        private List<Course> courses = new List<Course>();
 
         public void AddCourse(Course course) {
-            throw new NotImplementedException();
+            courses.Add(course);
         }
 
         public Course GetCourse(string name) {
-            throw new NotImplementedException();
+            foreach(Course course in courses) {
+                if (course.Name.Equals(name)) {
+                    return course;
+                }
+            }
+            return null;
         }
 
         public double GetTotalValue() {
-            throw new NotImplementedException();
+            double value = 0;
+            foreach(Course course in courses) {
+                value += Utility.GetValueOfCourse(course);
+            }
+            return value;
         }
     }
 }

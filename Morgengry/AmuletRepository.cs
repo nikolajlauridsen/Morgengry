@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace Morgengry {
     public class AmuletRepository {
-        private List<Amulet> amulets;
+        private List<Amulet> amulets = new List<Amulet>();
 
         public void AddAmulet(Amulet amulet) {
-            throw new NotImplementedException();
+            amulets.Add(amulet);
         }
 
         public Amulet GetAmulet(int itemId) {
-            throw new NotImplementedException();
+            foreach(Amulet amulet in amulets) {
+                if (amulet.ItemId.Equals(itemId)) {
+                    return amulet;
+                }
+            }
+            return null;
         }
 
         public double GetTotalValue() {
-            throw new NotImplementedException();
+            double value = 0;
+            foreach(Amulet amulet in amulets) {
+                value += Utility.GetValueOfAmulet(amulet);
+            }
+            return value;
         }
     }
 }

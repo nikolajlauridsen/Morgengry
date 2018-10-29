@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Morgengry {
     public class BookRepository {
-        private List<Book> books;
-
+        private List<Book> books = new List<Book>();
 
         public void AddBook(Book book) {
             books.Add(book);
@@ -26,7 +25,7 @@ namespace Morgengry {
             double value = 0;
 
             foreach(Book book in books) {
-                value += book.Price;
+                value += Utility.GetValueOfBook(book);
             }
 
             return value;
