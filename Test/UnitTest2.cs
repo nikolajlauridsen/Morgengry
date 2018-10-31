@@ -12,6 +12,7 @@ namespace Test {
         Course c111, c112;
         CourseRepository courses = new CourseRepository();
         MerchandiseRepository merchandise = new MerchandiseRepository();
+        Utility util = new Utility();
 
         [TestInitialize]
         public void Init() {
@@ -37,24 +38,24 @@ namespace Test {
 
         [TestMethod]
         public void TestGetValueForBook() {
-            Assert.AreEqual(0.0, merchandise.GetValueOfMerchandise(b1));
-            Assert.AreEqual(0.0, merchandise.GetValueOfMerchandise(b2));
-            Assert.AreEqual(123.55, merchandise.GetValueOfMerchandise(b3));
-            // Assert.AreEqual(123.55, books.GetTotalValue());
+            Assert.AreEqual(0.0, util.GetValueOfMerchandise(b1));
+            Assert.AreEqual(0.0, util.GetValueOfMerchandise(b2));
+            Assert.AreEqual(123.55, util.GetValueOfMerchandise(b3));
+            Assert.AreEqual(183.55, merchandise.GetTotalValue());
         }
 
         [TestMethod]
         public void TestGetValueForAmulet() {
-            Assert.AreEqual(20.0, merchandise.GetValueOfMerchandise(a11));
-            Assert.AreEqual(27.5, merchandise.GetValueOfMerchandise(a12));
-            Assert.AreEqual(12.5, merchandise.GetValueOfMerchandise(a13));
-            // Assert.AreEqual(60.0, amulets.GetTotalValue());
+            Assert.AreEqual(27.5, util.GetValueOfMerchandise(a12));
+            Assert.AreEqual(12.5, util.GetValueOfMerchandise(a13));
+            Assert.AreEqual(20.0, util.GetValueOfMerchandise(a11));
+            Assert.AreEqual(183.55, merchandise.GetTotalValue());
         }
 
         [TestMethod]
         public void TestGetValueForCourse() {
-            Assert.AreEqual(0.0, Utility.GetValueOfCourse(c111));
-            Assert.AreEqual(2625.00, Utility.GetValueOfCourse(c112));
+            Assert.AreEqual(0.0, util.GetValueOfCourse(c111));
+            Assert.AreEqual(2625.00, util.GetValueOfCourse(c112));
             Assert.AreEqual(2625.00, courses.GetTotalValue());
         }
 
