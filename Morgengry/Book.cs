@@ -23,5 +23,9 @@ namespace Morgengry {
         public override string ToString() {
             return String.Format("ItemId: {0}, Title: {1}, Price: {2}", ItemId, Title, Price);
         }
+
+        public override double GetValue() {
+            return Price;
+        }
     }
 }
