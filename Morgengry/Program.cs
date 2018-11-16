@@ -32,6 +32,8 @@ namespace Morgengry {
             vr1.AddValuable(c2);
 
             vr1.Save();
+            vr1.Load();
+            Console.ReadKey(true);
         }
     }
 }

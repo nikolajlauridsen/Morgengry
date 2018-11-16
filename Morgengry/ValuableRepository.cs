@@ -80,12 +80,57 @@ namespace Morgengry {
 
         public void Load()
         {
-            throw new NotImplementedException();
+            Load("ValuableRepository.txt");
         }
 
         public void Load(string filename)
         {
-            throw new NotImplementedException();
+            string[] src = LoadTextFile(filename);
+
+            foreach(string line in src)
+            {
+                string[] elements = line.Split(';');
+                switch (elements[0])
+                {
+                    case "BOG":
+                        Book book = new Book(elements[1]);
+                        if (ElementExists(elements[2]))
+                        {
+                            book.Title = elements[2];
+                        }
+                        book.Price = Double.Parse(elements[3]);
+                        valuables.Add(book);
+                        break;
+
+                    case "AMULET":
+                        Amulet amulet = new Amulet(elements[1]);
+                        // Set design
+                        if(ElementExists(elements[2]))
+                        {
+                            amulet.Design = elements[2];
+                        }
+                        // Set quality
+                        if(elements[3] == Level.low.ToString())
+                        {
+                            amulet.Quality = Level.low;
+                        } else if(elements[3] == Level.medium.ToString())
+                        {
+                            amulet.Quality = Level.medium;
+                        } else if(elements[3] == Level.high.ToString())
+                        {
+                            amulet.Quality = Level.high;
+                        }
+                        valuables.Add(amulet);
+                        break;
+
+                    case "COURSE":
+                        Course course = new Course(elements[1]);
+                        course.DurationInMinutes = int.Parse(elements[2]);
+                        course.CourseHourValue = double.Parse(elements[3]);
+                        valuables.Add(course);
+                        break;
+                }
+            }
         }
 
         private void SaveTextFile(string path, string text)
@@ -96,6 +141,15 @@ namespace Morgengry {
         private String[] LoadTextFile(string path)
         {
             return File.ReadAllLines(@path);
+        }
+
+        private bool ElementExists(string element)
+        {
+            if (element.Length > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
