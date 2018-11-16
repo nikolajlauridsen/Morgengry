@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Morgengry {
-    public class ValuableRepository {
+    public class ValuableRepository : IPersistable {
         private List<IValuable> valuables = new List<IValuable>();
 
         public void AddValuable(IValuable valuable) {
@@ -37,6 +37,26 @@ namespace Morgengry {
 
         public int Count() {
             return valuables.Count;
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save(string filename)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Load()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Load(string filename)
+        {
+            throw new NotImplementedException();
         }
     }
 }

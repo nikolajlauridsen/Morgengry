@@ -45,6 +45,7 @@
     <Compile Include="Amulet.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="Course.cs" />
+    <Compile Include="IPersistable.cs" />
     <Compile Include="IValuable.cs" />
     <Compile Include="Merchandise.cs" />
     <Compile Include="Program.cs" />
