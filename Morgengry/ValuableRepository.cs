@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Morgengry {
     public class ValuableRepository : IPersistable {
@@ -41,12 +42,40 @@ namespace Morgengry {
 
         public void Save()
         {
-            throw new NotImplementedException();
+            Save("ValuableRepository.txt");
         }
 
         public void Save(string filename)
         {
-            throw new NotImplementedException();
+            StringBuilder src = new StringBuilder();
+            foreach (IValuable valuable in valuables)
+            {
+                if (valuable is Book book)
+                {
+                    src.Append("BOG;");
+                    src.Append(book.ItemId + ";");
+                    src.Append(book.Title + ";");
+                    src.Append(book.Price);
+                    src.Append("\n");
+                }
+                else if (valuable is Amulet amulet)
+                {
+                    src.Append("AMULET;");
+                    src.Append(amulet.ItemId + ";");
+                    src.Append(amulet.Design + ";");
+                    src.Append(amulet.Quality);
+                    src.Append("\n");
+                }
+                else if (valuable is Course course)
+                {
+                    src.Append("COURSE;");
+                    src.Append(course.Name + ";");
+                    src.Append(course.DurationInMinutes + ";");
+                    src.Append(course.CourseHourValue);
+                    src.Append("\n");
+                }
+            }
+            SaveTextFile(filename, src.ToString());
         }
 
         public void Load()
@@ -57,6 +86,16 @@ namespace Morgengry {
         public void Load(string filename)
         {
             throw new NotImplementedException();
+        }
+
+        private void SaveTextFile(string path, string text)
+        {
+            File.WriteAllText(@path, text);
+        }
+
+        private String[] LoadTextFile(string path)
+        {
+            return File.ReadAllLines(@path);
         }
     }
 }
